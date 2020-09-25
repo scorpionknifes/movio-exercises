@@ -18,6 +18,7 @@ func Init() RandomPin {
 	}
 }
 
+// GetGenerated - used to get all generated pins by generator
 func (r *RandomPin) GetGenerated() []string {
 	keys := make([]string, 0, len(r.Generated))
 	for k := range r.Generated {
@@ -26,6 +27,7 @@ func (r *RandomPin) GetGenerated() []string {
 	return keys
 }
 
+// GenerateOne - generate one pin
 func (r *RandomPin) GenerateOne() string {
 	pin := sliceToString(r.random([]int{}, 0))
 	_, ok := r.Generated[pin]
@@ -37,6 +39,7 @@ func (r *RandomPin) GenerateOne() string {
 	return pin
 }
 
+// GenerateMultiple - generate n numbers of pins
 func (r *RandomPin) GenerateMultiple(number int) []string {
 	list := make([]string, number)
 	for i := 0; i < number; i++ {
@@ -45,6 +48,12 @@ func (r *RandomPin) GenerateMultiple(number int) []string {
 	return list
 }
 
+// GenerateOneThousand - generate exactly 1000 pins
+func (r *RandomPin) GenerateOneThousand() []string {
+	return r.GenerateMultiple(1000)
+}
+
+// random - generates the next digit in a pin (recursive call)
 func (r *RandomPin) random(current []int, increment int) []int {
 	random := rand.Intn(9)
 
