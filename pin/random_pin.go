@@ -61,18 +61,26 @@ func (r *RandomPin) random(current []int, increment int) []int {
 		return r.random([]int{random}, 0)
 	}
 
+	if len(current) == 4 {
+		return current
+	}
+
+	return r.random(r.increment(current, random, increment))
+
+}
+
+// increment - check if follows requirement
+func (r *RandomPin) increment(current []int, random int, increment int) ([]int, int) {
 	prev := current[len(current)-1]
 
 	switch {
-	case len(current) == 4:
-		return current
 	case prev == random:
-		return r.random(current, increment)
+		return current, increment
 	case prev+1 == random && increment > 2:
-		return r.random(current, increment)
+		return current, increment
 	case prev+1 == random:
-		return r.random(append(current, random), increment+1)
+		return append(current, random), increment + 1
 	default:
-		return r.random(append(current, random), 0)
+		return append(current, random), 0
 	}
 }

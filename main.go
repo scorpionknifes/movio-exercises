@@ -12,5 +12,6 @@ func main() {
 	fmt.Println(m)
 
 	p := pin.Init()
-	p.GenerateOneThousand()
+	c := p.GenerateOneThousand()
+	fmt.Println(c)
 }
