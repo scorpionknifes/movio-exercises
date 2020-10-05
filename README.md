@@ -1,5 +1,7 @@
 # Movio programming exercises
 
+Interview Questions from Movio
+
 ### Exercise 1
 
 Write a function that will merge two arrays of sorted integers in a linear fashion. The output should be a sorted array containing all the elements from both input arrays, including any duplicates.
