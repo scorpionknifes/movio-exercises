@@ -1,6 +1,6 @@
 # Movio programming exercises
 
-Interview Questions from Movio
+Two programming exercises from Movio
 
 ### Exercise 1
 
@@ -27,3 +27,13 @@ Here are the requirements:
    - Two consecutive digits should not be the same (e.g. 1156 is invalid)
    - Three consecutive digits should not be incremental (e.g. 1236 is invalid)
 4. The library should have automated tests.
+
+<details><summary>PS - results</summary>
+<p>
+   
+   `
+   Unfortunately, while your solution was pretty good we have made a decision to not move forward with your application.
+   `:sob:
+   
+</p>
+</details>
